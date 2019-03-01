@@ -1,0 +1,24 @@
+
+'''最大乘积算法核心:
+将输入的数据进行排序,将最大的三位数字进行乘积,
+最小的两位数字和最大的数字进行乘积
+比较两个数字将最大的数字返回
+最小乘积算法核心:
+将输入的数据进行排序,将最小的三位数字进行乘积
+最大的两位数字和最小的一位数字进行乘积
+选出两个数字中最小的一个数字进行返回
+'''
+
+num=input()
+xlist=num.split(' ')
+num=[int(xlist[i]) for i in range(len(xlist))]
+
+def max_chengji(num):
+    num=sorted(num)
+    max1=num[0]*num[1]*num[2]
+    max2=num[-1]*num[-2]*num[0]
+    if max1>max2:
+        return max1
+    else:
+        return max2
+print(max_chengji(num))
