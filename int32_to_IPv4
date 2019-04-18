@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2019/4/18 0018 18:25
+# @Author  : Willpower-chen
+# @Site    : 
+# @File    : int32_to_IPv4_v2.py
+# @Software: PyCharm
+
+def int32_to_IPv4(int32):
+    ip = "{0:b}".format(int32)
+    print(ip)
+    ip0=''
+    for i in range(32-len(ip)):
+        ip0+='0'
+    ip = ip0+ip
+    print(ip)
+    IPv4 = str(int(ip[0:8],2))+'.'+str(int(ip[9:16],2))+'.'+str(int(ip[16:24],2))+'.'+str(int(ip[25:32],2))
+    return IPv4
+
+print(int32_to_IPv4(2149583361))
